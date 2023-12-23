@@ -26,6 +26,11 @@ public class SupervisorController {
     @GetMapping(value ="/{Id}")
     public Supervisor getSupervisor(@PathVariable String Id){return supervisorService.getSupervisor(Id);}
 
+
+    @Operation(summary = "Get Supervisor By Name")
+    @GetMapping(value ="/{name}/name")
+    public Supervisor getSupervisorByName(@PathVariable String name){return supervisorService.getSupervisorByName(name);}
+
     @Operation(summary = "Add Supervisor")
     @PostMapping()
     public String addSupervisor(@RequestBody userDTO userDto){return supervisorService.createSupervisor(userDto);}

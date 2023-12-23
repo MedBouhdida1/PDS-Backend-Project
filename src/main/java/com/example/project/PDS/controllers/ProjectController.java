@@ -40,8 +40,8 @@ public class ProjectController {
     @GetMapping(value ="/{projectId}/stages")
     public List<Stage> getStagesProject(@PathVariable String projectId){return projectService.getStageByProject(projectId);}
 
-    @Operation(summary = "Get Stages by Project Id")
-    @GetMapping(value ="/stages/{stagesId}")
+    @Operation(summary = "Get Stages by Stage Id")
+    @GetMapping(value ="/stages/{stageId}")
     public Stage getStage(@PathVariable String stageId){return projectService.getStage(stageId);}
 
 

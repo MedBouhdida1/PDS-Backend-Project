@@ -34,6 +34,13 @@ public class SupervisorService {
         return supervisorRepo.findById(Id)
                 .orElseThrow(() -> new ObjectNotFoundException("Supervisor not found"));
     }
+
+    public Supervisor getSupervisorByName(String name){
+        Supervisor supervisor=supervisorRepo.findByName(name);
+        if (supervisor == null)
+            throw new ObjectNotFoundException("Supervisor not found");
+        return supervisor;
+    }
     // update supervisor
 
     public String updateSupervisor(String supervisorId, userDTO userDto) {
